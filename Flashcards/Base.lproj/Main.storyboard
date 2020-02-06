@@ -22,8 +22,8 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brasilia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVK-o4-A1r">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -42,6 +42,42 @@
                                     <outletCollection property="gestureRecognizers" destination="r26-Em-AKl" appends="YES" id="mjR-yo-zn7"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-qY-S8k">
+                                <rect key="frame" x="70" y="579" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="San Diego"/>
+                                <connections>
+                                    <action selector="option1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3s4-dd-Kkm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJq-vW-aa3">
+                                <rect key="frame" x="70" y="628" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="London"/>
+                                <connections>
+                                    <action selector="option2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J0m-Mj-Rpw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AE2-Bh-H7U">
+                                <rect key="frame" x="70" y="682" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Brasilia"/>
+                                <connections>
+                                    <action selector="option3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xjg-68-hDY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELL-wd-LbG">
+                                <rect key="frame" x="70" y="737" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="No Clue!"/>
+                                <connections>
+                                    <action selector="option4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m75-Gw-4fP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -49,6 +85,10 @@
                     <connections>
                         <outlet property="backLabel" destination="GVK-o4-A1r" id="rO7-eq-3yM"/>
                         <outlet property="frontLabel" destination="BRz-ha-aa5" id="kMv-3j-UAA"/>
+                        <outlet property="op1" destination="u1B-qY-S8k" id="I0a-9L-EEU"/>
+                        <outlet property="op2" destination="oJq-vW-aa3" id="oPK-OD-f1v"/>
+                        <outlet property="op3" destination="AE2-Bh-H7U" id="Rm6-cf-nyL"/>
+                        <outlet property="op4" destination="ELL-wd-LbG" id="Ure-7N-AO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
