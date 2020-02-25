@@ -46,7 +46,7 @@
                                 <rect key="frame" x="70" y="579" width="275" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="San Diego"/>
+                                <state key="normal" title="Brasilia"/>
                                 <connections>
                                     <action selector="option1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3s4-dd-Kkm"/>
                                 </connections>
@@ -64,7 +64,7 @@
                                 <rect key="frame" x="70" y="682" width="275" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Brasilia"/>
+                                <state key="normal" title="San Diego"/>
                                 <connections>
                                     <action selector="option3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xjg-68-hDY"/>
                                 </connections>
@@ -76,6 +76,23 @@
                                 <state key="normal" title="No Clue!"/>
                                 <connections>
                                     <action selector="option4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m75-Gw-4fP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ly3-ZN-Riv">
+                                <rect key="frame" x="195" y="810" width="24" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Button" image="plus" catalog="system"/>
+                                <connections>
+                                    <segue destination="b2O-9m-4RX" kind="show" id="vd7-L1-zG9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tM-0m-Hi6">
+                                <rect key="frame" x="335" y="299" width="72" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="pencil" catalog="system"/>
+                                <connections>
+                                    <segue destination="b2O-9m-4RX" kind="show" identifier="EditSegue" id="L2R-c6-9Mr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,5 +117,97 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="103.79464285714285"/>
         </scene>
+        <!--Creation View Controller-->
+        <scene sceneID="Cyb-GC-afc">
+            <objects>
+                <viewController id="eL4-EW-EuZ" customClass="CreationViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKr-Ka-yeF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fy-VM-ZHr">
+                                <rect key="frame" x="20" y="176" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gvs-oG-i3r">
+                                <rect key="frame" x="20" y="229" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RgK-1w-WDR">
+                                <rect key="frame" x="95" y="365" width="225" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0zn-cS-tbp">
+                                <rect key="frame" x="95" y="429" width="225" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H6B-WB-L5J">
+                                <rect key="frame" x="95" y="493" width="225" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ayz-X5-Ge2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ezL-Sq-cNX">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ouf-eb-uWV">
+                            <connections>
+                                <action selector="didTapOnCancel:" destination="eL4-EW-EuZ" id="GBw-Kk-HO0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="9bs-6f-8bw">
+                            <connections>
+                                <action selector="didTapOnDone:" destination="eL4-EW-EuZ" id="Inx-7N-SzQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="answerTextField" destination="gvs-oG-i3r" id="ogM-pW-RTz"/>
+                        <outlet property="option1" destination="RgK-1w-WDR" id="r0E-o9-jvU"/>
+                        <outlet property="option2" destination="0zn-cS-tbp" id="SFH-dl-5yD"/>
+                        <outlet property="option3" destination="H6B-WB-L5J" id="OAR-De-COK"/>
+                        <outlet property="questionTextField" destination="9fy-VM-ZHr" id="ylf-xU-POT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWo-8c-lnJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862.3188405797102" y="103.79464285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mMb-hX-QkR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b2O-9m-4RX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="5sc-39-nsT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wY-mm-FYs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eL4-EW-EuZ" kind="relationship" relationship="rootViewController" id="7Qi-x3-7BQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2N9-Jt-I0x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952.17391304347836" y="103.79464285714285"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="pencil" catalog="system" width="64" height="56"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="L2R-c6-9Mr"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var op4: UIButton!
     
     @IBAction func option1(_ sender: Any) {
-        op1.isHidden = true
+        op1.backgroundColor = UIColor.green
     }
     
     @IBAction func option2(_ sender: Any) {
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func option3(_ sender: Any) {
-        op3.backgroundColor = UIColor.green
+        op3.isHidden = true
     }
     
     @IBAction func option4(_ sender: Any) {
@@ -48,6 +48,35 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    func updateFlashcard(question: String, Answer: String, option2: String, option3: String, option4: String) {
+        frontLabel.text = question
+        backLabel.text = Answer
+        
+        op1.setTitle(Answer, for: .normal)
+        op2.setTitle(option2, for: .normal)
+        op3.setTitle(option3, for: .normal)
+        op4.setTitle(option4, for: .normal)
+        
+        op1.backgroundColor = nil
+        op2.isHidden = false
+        op3.isHidden = false
+        op4.isHidden = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardsController = self
+        
+        if segue.identifier == "EditSegue" {
+            creationController.initialQuestion = frontLabel.text
+            creationController.initialAnswer = backLabel.text
+        }
+    }
+    
     
 }
 
