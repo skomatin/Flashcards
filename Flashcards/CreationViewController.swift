@@ -30,9 +30,6 @@ class CreationViewController: UIViewController {
         
         let alert  = UIAlertController(title: "Missing Text", message: "You need to enter both a question and an answer", preferredStyle: .alert)
         
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-//            self.dismiss(animated: true, completion: nil)
-//        }))
         let okAction = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(okAction)
         
