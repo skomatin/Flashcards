@@ -95,6 +95,30 @@
                                     <segue destination="b2O-9m-4RX" kind="show" identifier="EditSegue" id="L2R-c6-9Mr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9y-Zy-RHZ">
+                                <rect key="frame" x="53" y="806" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Prev"/>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QjT-h1-sL7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QS9-UV-7Lo">
+                                <rect key="frame" x="336" y="808" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LTe-Yt-5id"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cws-gg-X4Z">
+                                <rect key="frame" x="61" y="103" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="❌"/>
+                                <connections>
+                                    <action selector="didTapOnDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eim-eK-Dtu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -102,10 +126,12 @@
                     <connections>
                         <outlet property="backLabel" destination="GVK-o4-A1r" id="rO7-eq-3yM"/>
                         <outlet property="frontLabel" destination="BRz-ha-aa5" id="kMv-3j-UAA"/>
+                        <outlet property="nextButton" destination="QS9-UV-7Lo" id="cIU-zG-eMs"/>
                         <outlet property="op1" destination="u1B-qY-S8k" id="I0a-9L-EEU"/>
                         <outlet property="op2" destination="oJq-vW-aa3" id="oPK-OD-f1v"/>
                         <outlet property="op3" destination="AE2-Bh-H7U" id="Rm6-cf-nyL"/>
                         <outlet property="op4" destination="ELL-wd-LbG" id="Ure-7N-AO6"/>
+                        <outlet property="prevButton" destination="M9y-Zy-RHZ" id="6tc-c2-vdu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

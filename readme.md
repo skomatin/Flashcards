@@ -2,6 +2,24 @@
 
 📝 `NOTE:` Paste the README templates for each subsequent lab here at the top, (i.e. lab 2, 3, 4). This will show a history of your development process including which users stories you completed and how your app looked and  at each step.
 
+## Lab 3
+
+### App Description
+Allow users to browse through multiple flashcards and store them to the phone
+
+### App Walk-though
+
+<img src="http://g.recordit.co/Aizmo1pp6a.gif" width=200><br>
+
+## Required
+- [x] User can browse through multiple flashcards
+- [x] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
+## Optional
+- [x] User can delete a flashcard
+- [x] User can edit existing flashcard
+- [x] User can store multiple choice questions
+
 ## Lab 2
 
 ### App Description
