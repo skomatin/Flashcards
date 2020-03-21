@@ -9,7 +9,13 @@
 import UIKit
 
 class CreationViewController: UIViewController {
-
+    override func viewDidLoad() {
+           super.viewDidLoad()
+           questionTextField.text = initialQuestion
+           answerTextField.text = initialAnswer
+           // Do any additional setup after loading the view.
+   }
+    
     var initialQuestion: String?
     var initialAnswer: String?
     
@@ -43,15 +49,11 @@ class CreationViewController: UIViewController {
             }
             flashcardsController.updateFlashcard(question: questionText!, Answer: answerText!, option2: option1.text!, option3: option2.text!, option4: option3.text!, isExisting: isExisting)
             dismiss(animated: true)
+            
         }
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        questionTextField.text = initialQuestion
-        answerTextField.text = initialAnswer
-        // Do any additional setup after loading the view.
-    }
+   
     
 
     /*

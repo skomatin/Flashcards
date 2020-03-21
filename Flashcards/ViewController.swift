@@ -26,11 +26,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var op3: UIButton!
     @IBOutlet weak var op4: UIButton!
     
+    @IBOutlet weak var card: UIView!
+    
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
     var flashcards = [Flashcard]()
     var currentIndex = 0
+    var correctAnswerButton: UIButton!
     
     @IBAction func didTapOnDelete(_ sender: Any) {
         let alert = UIAlertController(title: "Delete Flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
@@ -60,33 +63,56 @@ class ViewController: UIViewController {
     @IBAction func didTapOnPrev(_ sender: Any) {
         currentIndex = currentIndex - 1
         
-        updateLabels()
-        
+//        updateLabels()
+            animateCardOut()
         updateNxtPrevButtons()
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
         currentIndex = currentIndex + 1
-        
-        updateLabels()
+        animateCardOut()
         
         updateNxtPrevButtons()
     }
     
     @IBAction func option1(_ sender: Any) {
-        op1.backgroundColor = UIColor.green
+//        op1.backgroundColor = UIColor.green
+        if op1 == correctAnswerButton {
+            flipFlashcard()
+        } else {
+            frontLabel.isHidden = false
+            op1.isHidden = true
+        }
     }
     
     @IBAction func option2(_ sender: Any) {
-        op2.isHidden = true
+//        op2.isHidden = true
+        if op2 == correctAnswerButton {
+            flipFlashcard()
+        } else {
+            frontLabel.isHidden = false
+            op2.isHidden = true
+        }
     }
     
     @IBAction func option3(_ sender: Any) {
-        op3.isHidden = true
+//        op3.isHidden = true
+        if op3 == correctAnswerButton {
+            flipFlashcard()
+        } else {
+            frontLabel.isHidden = false
+            op3.isHidden = true
+        }
     }
     
     @IBAction func option4(_ sender: Any) {
-        op4.isHidden = true
+//        op4.isHidden = true
+        if op4 == correctAnswerButton {
+            flipFlashcard()
+        } else {
+            frontLabel.isHidden = false
+            op4.isHidden = true
+        }
     }
     
     func updateLabels() {
@@ -104,6 +130,17 @@ class ViewController: UIViewController {
         op2.isHidden = false
         op3.isHidden = false
         op4.isHidden = false
+        
+        let buttons = [op1, op2, op3, op4].shuffled()
+        let answers = [currentFlashcard.answer, currentFlashcard.option2, currentFlashcard.option3, currentFlashcard.option4].shuffled()
+        
+        for (button, answer) in zip(buttons, answers) {
+            button?.setTitle(answer, for: .normal)
+            
+            if answer == currentFlashcard.answer {
+                correctAnswerButton = button
+            }
+        }
     }
     
     func saveAllFlashcardsToDisk() {
@@ -126,6 +163,17 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        card.alpha = 0
+        card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.card.alpha = 1
+            self.card.transform = CGAffineTransform.identity
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -143,13 +191,36 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapOnFlashCard(_ sender: Any) {
-        if frontLabel.isHidden {
-            frontLabel.isHidden = false
-        }
-        else {
-            frontLabel.isHidden = true
-        }
         
+        flipFlashcard()
+    }
+    
+    func flipFlashcard() {
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if self.frontLabel.isHidden {
+                self.frontLabel.isHidden = false
+            }
+            else {
+                self.frontLabel.isHidden = true
+            }
+        })
+            
+    }
+    
+    func animateCardIn() {
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity
+        })
+    }
+    
+    func animateCardOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            self.updateLabels()
+            self.animateCardIn()
+        })
     }
     
     func updateNxtPrevButtons() {
@@ -167,7 +238,7 @@ class ViewController: UIViewController {
             prevButton.isEnabled = true
         }
     }
-    
+
     func updateFlashcard(question: String, Answer: String, option2: String, option3: String, option4: String, isExisting: Bool) {
         
         let flashcard = Flashcard(question: question, answer: Answer, option2: option2, option3: option3, option4: option4)
